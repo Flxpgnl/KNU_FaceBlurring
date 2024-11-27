@@ -40,6 +40,7 @@ I have opted to add my initial file that i created to get started. This file is 
 │   ├── fps_graph.png                              # FPS Graph for M2 MacBook Air
 │   ├── memory_usage_graph.png                     # memory usage Graph for the code
 │   ├── image.png                                  # generic image to used for testing
+│   ├── example-ing.png                            # screenshot of running code
 │   └── Multiplefaces.webp                         # image to test the effectiveness of code   
 └── README.md 
 ```
@@ -67,6 +68,9 @@ I have opted to add my initial file that i created to get started. This file is 
 <img src="Images/memory_usage_graph.png" alt="Memory Usage">
 
 **NOTE:** using AI to help, i was able to install psutil to be able to see my metrics while my code is running this should give more accurate metrics dependant on your system. 
+
+here is an example:
+<img src="Images/example-img.png" alt="Example">
 
 ## Installation and Usage
 
