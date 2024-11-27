@@ -3,7 +3,6 @@
 Author: Felix Pignal
 
 ## Overview
-
 This project demonstrates a live face detection and blurring application using OpenCV and Dlib. The program detects faces in a live video stream, identifies facial landmarks, and applies a Gaussian blur to the detected face regions to obscure them. The main goal is to provide a foundation for privacy-preserving applications like anonymizing faces in real-time video.
 
 ## Key Objectives
@@ -55,9 +54,9 @@ I have opted to add my initial file that i created to get started. This file is 
 
 ## Performance Metrics
 
-- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current open source generative models.
+- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for frontal faces under normal lighting conditions, which is the best I could do with current open source generative models.
 
-- **Blur Accuracy**: I decided to include this metric as it reprisented the main point of my project. we notice that we only get 80% of accuarcy, this is because my fliter goes beyond the predefined limits of the face detection library.
+- **Blur Accuracy**: I decided to include this metric as it represented the main point of my project. We notice that we only get 80% accuracy; this is because my filter goes beyond the predefined limits of the face detection library.
 
 <img src="Images/blur_accuracy_graph.png" alt="Blur Accuracy">
 
@@ -79,7 +78,8 @@ here is an example:
 - Python 3.6 or later
 - OpenCV (cv2) library
 - Dlib library
-- NumPy
+- NumPy  # for the live FPS count
+- psutil # for the live FPS count
 
 ### Installation
 
@@ -113,7 +113,7 @@ here is an example:
     ```
     make sure you edit line 66 of the Image.py file with the path to your image (if you import your own)
 
-2. The live video feed will appear with blurred faces.
+2. The live video feed will appear with your and your friends faces blurred.
 3. Press `q` to exit the application.
 
 ## Example Usage
