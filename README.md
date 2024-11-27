@@ -15,7 +15,7 @@ This project demonstrates a live face detection and blurring application using O
 
 ## Results and Insights
 
-- **Accurate Face Detection**: The application uses a confidence threshold of 0.5, balancing accuracy and false positives.
+- **Accurate Face Detection**: The application uses a confidence threshold of 0.5, balancing accuracy and false positives. It gives an overall of 90% accuracy rate.
 - **Dynamic Blurring**: Facial landmarks enable precise blurring of not only the face but also the forehead region for additional coverage.
 - **Real-Time Performance**: Achieves real-time performance on most modern systems, suitable for live applications.
 
@@ -83,8 +83,14 @@ I have opted to add my initial file that i created to get started. This file is 
 
 1. Execute the script:
     ```bash
-    python detect_and_blur_faces_live.py
+    python Video.py
     ```
+    or
+
+    ```bash
+    python Image.py
+    ```
+    make sure you edit line 66 of the Image.py file with the path to your image (if you import your own)
 
 2. The live video feed will appear with blurred faces.
 3. Press `q` to exit the application.
