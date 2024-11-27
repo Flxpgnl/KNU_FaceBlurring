@@ -1,111 +1,112 @@
-Live Face Detection and Blurring with OpenCV and Dlib
+# Live Face Detection and Blurring with OpenCV and Dlib
 
 Author: Felix Pignal
 
-Overview:
+## Overview
 
-This project demonstrates a live face detection and blurring application using OpenCV and Dlib. 
-The program detects faces in a live video stream, identifies facial landmarks, and applies a Gaussian blur to the detected face regions to obscure them. 
-The main goal is to provide a foundation for privacy-preserving applications like anonymizing faces in real-time video.
+This project demonstrates a live face detection and blurring application using OpenCV and Dlib. The program detects faces in a live video stream, identifies facial landmarks, and applies a Gaussian blur to the detected face regions to obscure them. The main goal is to provide a foundation for privacy-preserving applications like anonymizing faces in real-time video.
 
-Key Objectives
+## Key Objectives
 
-	1.	Face Detection: Use a pre-trained deep learning model (Caffe-based) to detect faces in a live video stream.
-	2.	Facial Landmark Detection: Employ Dlib’s 68-point shape predictor to identify key facial features.
-	3.	Blurring Faces: Apply Gaussian blur to the detected face regions while leaving the rest of the frame unaltered.
-	4.	Real-Time Processing: Ensure smooth, real-time performance for video streams.
+1. **Face Detection**: Use a pre-trained deep learning model (Caffe-based) to detect faces in a live video stream.
+2. **Facial Landmark Detection**: Employ Dlib's 68-point shape predictor to identify key facial features.
+3. **Blurring Faces**: Apply Gaussian blur to the detected face regions while leaving the rest of the frame unaltered.
+4. **Real-Time Processing**: Ensure smooth, real-time performance for video streams.
 
-Results and Insights
+## Results and Insights
 
-	•	Accurate Face Detection: The application uses a confidence threshold of 0.5, balancing accuracy and false positives.
-	•	Dynamic Blurring: Facial landmarks enable precise blurring of not only the face but also the forehead region for additional coverage.
-	•	Real-Time Performance: Achieves real-time performance on most modern systems, suitable for live applications.
+- **Accurate Face Detection**: The application uses a confidence threshold of 0.5, balancing accuracy and false positives.
+- **Dynamic Blurring**: Facial landmarks enable precise blurring of not only the face but also the forehead region for additional coverage.
+- **Real-Time Performance**: Achieves real-time performance on most modern systems, suitable for live applications.
 
-Source Code
+## Source Code
 
-The source code consists of a two Python files. The key dependencies include OpenCV, Dlib, and NumPy. 
-The first Python file is for just images, load any picture you like with a face and it will be blurred.
-While the second Python file is for live video, please make sure to use your own webcam as this code will not work with Apple Continuity Camera.
+The source code consists of a primary Python file for real-time video blurring using a webcam, as well as configuration and model files necessary for the application.
 
+### File Structure
 
-File Structure
-
+```
 .
-├── detect_and_blur_faces_live.py
-├── deploy.prototxt                # Caffe model configuration file
+├── detect_and_blur_faces_live.py         # Main script for live video processing
+├── deploy.prototxt                       # Caffe model configuration file
 ├── res10_300x300_ssd_iter_140000.caffemodel  # Pre-trained Caffe model
 ├── shape_predictor_68_face_landmarks.dat    # Dlib facial landmark model
+```
 
-Key Files
+### Key Files
 
-	•	detect_and_blur_faces_live.py: The main script containing the logic for face detection and blurring.
-	•	deploy.prototxt: Configuration file for the Caffe face detection model.
-	•	res10_300x300_ssd_iter_140000.caffemodel: Pre-trained Caffe model weights for face detection.
-	•	shape_predictor_68_face_landmarks.dat: Dlib’s pre-trained model for 68-point facial landmark detection.
+- `detect_and_blur_faces_live.py`: The main script containing the logic for face detection and blurring.
+- `deploy.prototxt`: Configuration file for the Caffe face detection model.
+- `res10_300x300_ssd_iter_140000.caffemodel`: Pre-trained Caffe model weights for face detection.
+- `shape_predictor_68_face_landmarks.dat`: Dlib’s pre-trained model for 68-point facial landmark detection.
 
+## Performance Metrics
 
-Performance Metrics (DESCRIBE THEMMMMMMMMM WHYYYYY)
+- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current generative models. 
 
-Metric	Value
-Face Detection Accuracy	~90% for frontal faces
-Processing Speed	~30 FPS on modern CPUs
-Memory Usage	~200 MB runtime usage
+- **Processing Speed**: ~30 FPS on modern CPUs.
 
+- **Memory Usage**: ~200 MB RAM runtime usage.
 
-Installation and Usage
+## Installation and Usage
 
-Prerequisites
+### Prerequisites
 
-	•	Python 3.6 or later
-	•	OpenCV (cv2) library
-	•	Dlib library
-	•	NumPy
+- Python 3.6 or later
+- OpenCV (cv2) library
+- Dlib library
+- NumPy
 
-Installation
+### Installation
 
-	1.	Clone the Repository:
+1. Clone the Repository:
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
 
-git clone <repository-url>
-cd <repository-folder>
+2. Install Dependencies:
+    ```bash
+    pip install opencv-python dlib numpy
+    ```
 
+3. Download Required Models:
+   Ensure the following files are in the project directory:
+   - `deploy.prototxt`
+   - `res10_300x300_ssd_iter_140000.caffemodel`
+   - `shape_predictor_68_face_landmarks.dat`
 
-	2.	Install Dependencies:
+### Running the Application
 
-pip install opencv-python dlib numpy (enter this line in your terminal)
+1. Execute the script:
+    ```bash
+    python detect_and_blur_faces_live.py
+    ```
 
+2. The live video feed will appear with blurred faces.
+3. Press `q` to exit the application.
 
-	3.	Download Required Models:
-Ensure the following files are in the project directory and not elsewhere on the computer:
-	•	deploy.prototxt
-	•	res10_300x300_ssd_iter_140000.caffemodel
-	•	shape_predictor_68_face_landmarks.dat
-
-Running the Application
-
-	1.	Execute the script:
-
-python detect_and_blur_faces_live.py
-
-
-	2.	The live video feed will appear with blurred faces.
-	3.	Press q to exit the application.
-
-Example Usage
+## Example Usage
 
 This project can be extended for:
-	•	Anonymization: Blur faces in live streams to protect privacy.
-	•	Content Moderation: Obscure sensitive faces in video feeds.
-	•	Real-Time Effects: Add filters or other effects to detected face regions.
+- **Anonymization**: Blur faces in live streams to protect privacy.
+- **Content Moderation**: Obscure sensitive faces in video feeds.
+- **Real-Time Effects**: Add filters or other effects to detected face regions.
 
-Future Work
+## Future Work
 
-	•	Enhance performance with GPU acceleration using OpenCV’s CUDA integration.
-	•	Add support for detecting and blurring multiple faces simultaneously in high-density scenes.
-	•	Expand the application for additional use cases, such as masking or real-time beautification.
+- Enhance performance with GPU acceleration using OpenCV's CUDA integration.
+- Add support for detecting and blurring multiple faces simultaneously in high-density scenes.
+- Expand the application for additional use cases, such as masking or real-time beautification.
 
+## Issues and Contributions
 
-Issues and Contributions:
+### Known Issues
 
-there are some issues like not detecting the hair propely, this is because the model is not trained for that, 
-so an idea would be to train an new model that can detect the hair and then use it to detect the face, to then blur it.
+- The model may not detect and blur hair accurately, as it is not trained for that purpose.
 
+### Contribution Opportunities
+
+- Train a new model capable of more accurately detecting hair along with faces.
+- Fork the repository and create a branch for contributions.
+- Submit a pull request with a detailed description of your changes.
