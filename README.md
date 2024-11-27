@@ -33,13 +33,13 @@ I have opted to add my initial file that i created to get started. This file is 
 ├── Image.py                                       # Script for still image processing
 ├── Model/  
 │   ├── deploy.prototxt                            # Caffe model configuration file  
-|   ├── res10_300x300_ssd_iter_140000.caffemodel   # Pre-trained Caffe model
+│   ├── res10_300x300_ssd_iter_140000.caffemodel   # Pre-trained Caffe model
 │   └── shape_predictor_68_face_landmarks.dat      # Dlib facial landmark model   
 ├── Images/  
 │   ├── blur_accuracy_graph.png                    # Picture graph showing accuracy of blurring
-|   ├── fps_graph.png                              # FPS Graph for M2 MacBook Air
-|   ├── memory_usage_graph.png                     # memory usage Graph for the code
-|   ├── image.png                                  # generic image to used for testing
+│   ├── fps_graph.png                              # FPS Graph for M2 MacBook Air
+│   ├── memory_usage_graph.png                     # memory usage Graph for the code
+│   ├── image.png                                  # generic image to used for testing
 │   └── Multiplefaces.webp                         # image to test the effectiveness of code   
 └── README.md 
 ```
@@ -54,10 +54,17 @@ I have opted to add my initial file that i created to get started. This file is 
 
 ## Performance Metrics
 
-- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current open source generative models. 
+- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current open source generative models.
 
-- **Processing Speed**: ~10 to 15 FPS on apple silicon without GPU hardware acceleration
-- **Memory Usage**: ~500MB, 
+- **Blur Accuracy**: I decided to include this metric as it reprisented the main point of my project. we notice that we only get 80% of accuarcy, this is because my fliter goes beyond the predefined limits of the face detection library.
+
+<img src="Images/blur_accuracy_graph.png" alt="Blur Accuracy">
+
+- **Processing Speed**: ~7 FPS on apple silicon without GPU hardware acceleration
+<img src="Images/fps_graph.png" alt="FPS Apple M2">
+
+- **Memory Usage**: ~500MB which from online reaserch seems to be normal.
+<img src="Images/memory_usage_graph.png" alt="Memory Usage">
 
 **NOTE:** using AI to help, i was able to install psutil to be able to see my metrics while my code is running this should give more accurate metrics dependant on your system. 
 
