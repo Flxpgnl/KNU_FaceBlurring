@@ -23,26 +23,30 @@ This project demonstrates a live face detection and blurring application using O
 
 The source code consists of a primary Python file for real-time video blurring using a webcam, as well as configuration and model files necessary for the application.
 
+I have opted to add my initial file that i created to get started. This file is for still images only and works in the same fashion as the video code. This code can be used for computers with less computing power.
+
 ### File Structure
 
 ```
 .
-├── detect_and_blur_faces_live.py         # Main script for live video processing
-├── deploy.prototxt                       # Caffe model configuration file
+├── Video.py                                  # Main script for live video processing
+├── Image.py                                  # Main script for Image processing
+├── deploy.prototxt                           # Caffe model configuration file
 ├── res10_300x300_ssd_iter_140000.caffemodel  # Pre-trained Caffe model
-├── shape_predictor_68_face_landmarks.dat    # Dlib facial landmark model
+├── shape_predictor_68_face_landmarks.dat     # Dlib facial landmark model
 ```
 
 ### Key Files
 
-- `detect_and_blur_faces_live.py`: The main script containing the logic for face detection and blurring.
+- `Video.py`: The main script containing the logic for face detection and blurring using the computer webcam to take a live video feed.
+- `Image.py`: The main script containing the logic for face detection and blurring using a downloaded image from the internet.
 - `deploy.prototxt`: Configuration file for the Caffe face detection model.
 - `res10_300x300_ssd_iter_140000.caffemodel`: Pre-trained Caffe model weights for face detection.
 - `shape_predictor_68_face_landmarks.dat`: Dlib’s pre-trained model for 68-point facial landmark detection.
 
 ## Performance Metrics
 
-- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current generative models. 
+- **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current open source generative models. 
 
 - **Processing Speed**: ~30 FPS on modern CPUs.
 - **Memory Usage**: ~200 MB RAM runtime usage.
@@ -60,8 +64,8 @@ The source code consists of a primary Python file for real-time video blurring u
 
 1. Clone the Repository:
     ```bash
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone https://github.com/Flxpgnl/KNU_FaceBlurring.git
+    cd face-blurring
     ```
 
 2. Install Dependencies:
@@ -92,12 +96,6 @@ This project can be extended for:
 - **Content Moderation**: Obscure sensitive faces in video feeds.
 - **Real-Time Effects**: Add filters or other effects to detected face regions.
 
-## Future Work
-
-- Enhance performance with GPU acceleration using OpenCV's CUDA integration.
-- Add support for detecting and blurring multiple faces simultaneously in high-density scenes.
-- Expand the application for additional use cases, such as masking or real-time beautification.
-
 ## Issues and Contributions
 
 ### Known Issues
@@ -107,5 +105,13 @@ This project can be extended for:
 ### Contribution Opportunities
 
 - Train a new model capable of more accurately detecting hair along with faces.
-- Fork the repository and create a branch for contributions.
-- Submit a pull request with a detailed description of your changes.
+- Please feel free to fork the repository and create a branch for contributions.
+- Any feedback would be greatly appreciated
+
+## Future Work
+
+- Enhance performance with GPU acceleration.
+- Add support for detecting and blurring multiple faces simultaneously in high-density scenes (at the moment my M2 Macbook Air can handle 4 faces).
+
+## References and Documentation
+
