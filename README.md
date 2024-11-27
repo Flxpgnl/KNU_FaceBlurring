@@ -45,7 +45,6 @@ The source code consists of a primary Python file for real-time video blurring u
 - **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current generative models. 
 
 - **Processing Speed**: ~30 FPS on modern CPUs.
-
 - **Memory Usage**: ~200 MB RAM runtime usage.
 
 ## Installation and Usage
