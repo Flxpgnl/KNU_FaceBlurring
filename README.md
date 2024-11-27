@@ -29,11 +29,19 @@ I have opted to add my initial file that i created to get started. This file is 
 
 ```
 .
-├── Video.py                                  # Main script for live video processing
-├── Image.py                                  # Main script for Image processing
-├── deploy.prototxt                           # Caffe model configuration file
-├── res10_300x300_ssd_iter_140000.caffemodel  # Pre-trained Caffe model
-├── shape_predictor_68_face_landmarks.dat     # Dlib facial landmark model
+├── Video.py                                       # Main script for live video processing
+├── Image.py                                       # Script for still image processing
+├── Model/  
+│   ├── deploy.prototxt                            # Caffe model configuration file  
+|   ├── res10_300x300_ssd_iter_140000.caffemodel   # Pre-trained Caffe model
+│   └── shape_predictor_68_face_landmarks.dat      # Dlib facial landmark model   
+├── Images/  
+│   ├── blur_accuracy_graph.png                    # Picture graph showing accuracy of blurring
+|   ├── fps_graph.png                              # FPS Graph for M2 MacBook Air
+|   ├── memory_usage_graph.png                     # memory usage Graph for the code
+|   ├── image.png                                  # generic image to used for testing
+│   └── Multiplefaces.webp                         # image to test the effectiveness of code   
+└── README.md 
 ```
 
 ### Key Files
@@ -48,8 +56,10 @@ I have opted to add my initial file that i created to get started. This file is 
 
 - **Face Detection Accuracy**: The model has a detection accuracy of approximately 90% for 	frontal faces under normal lighting conditions, which is the best i could do with current open source generative models. 
 
-- **Processing Speed**: ~30 FPS on modern CPUs.
-- **Memory Usage**: ~200 MB RAM runtime usage.
+- **Processing Speed**: ~10 to 15 FPS on apple silicon without GPU hardware acceleration
+- **Memory Usage**: ~500MB, 
+
+**NOTE:** using AI to help, i was able to install psutil to be able to see my metrics while my code is running this should give more accurate metrics dependant on your system. 
 
 ## Installation and Usage
 
@@ -81,7 +91,7 @@ I have opted to add my initial file that i created to get started. This file is 
 
 ### Running the Application
 
-1. Execute the script:
+1. Execute one of the scripts:
     ```bash
     python Video.py
     ```
@@ -107,6 +117,8 @@ This project can be extended for:
 ### Known Issues
 
 - The model may not detect and blur hair accurately, as it is not trained for that purpose.
+- The computer may struggle to blur more than 5 faces due to preformance limitations.
+- the model is only accurate to 90%
 
 ### Contribution Opportunities
 
@@ -118,6 +130,7 @@ This project can be extended for:
 
 - Enhance performance with GPU acceleration.
 - Add support for detecting and blurring multiple faces simultaneously in high-density scenes (at the moment my M2 Macbook Air can handle 4 faces).
+- a fun idea would be to implement this blurring for pets, such as cats and dogs.
 
 ## References and Documentation
 

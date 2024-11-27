@@ -4,10 +4,10 @@ import numpy as np
 
 def detect_and_blur_faces_image(image_path):
     face_net = cv2.dnn.readNetFromCaffe(
-        "deploy.prototxt",
-        "res10_300x300_ssd_iter_140000.caffemodel"
+        "Model/deploy.prototxt",
+        "Model/res10_300x300_ssd_iter_140000.caffemodel"
     )
-    predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+    predictor = dlib.shape_predictor("Model/shape_predictor_68_face_landmarks.dat")
 
     # Read the image
     frame = cv2.imread(image_path)
@@ -63,4 +63,4 @@ def detect_and_blur_faces_image(image_path):
     cv2.destroyAllWindows()
 
 # Call the function with the path to your image
-detect_and_blur_faces_image('FaceRefCover1.jpg.webp')
+detect_and_blur_faces_image('Images/image.png')
