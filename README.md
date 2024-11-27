@@ -145,3 +145,9 @@ This project can be extended for:
 
 ## References and Documentation
 
+The <a href="https://caffe.berkeleyvision.org ">Caffe Library</a> was my main source of insperation for the project as I decided to stick to one library all the way through. 
+
+I also extensively used  <a href="https://pyimagesearch.com/2021/04/19/face-detection-with-dlib-hog-and-cnn/">Dlib Library</a>, a CNN that as 68 points for facial recognition, this significantly accelerated my project.
+
+- Research on modern face detection techniques: https://ar5iv.labs.arxiv.org/html/2103.06191
+- Advances in privacy-preserving computer vision: https://arxiv.org/abs/2302.05017
